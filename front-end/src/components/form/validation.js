@@ -6,7 +6,7 @@ const reg = /^[abcdefghijklmnopqrstuvwxyz]+$/i;
 export const schema = yup.object({
   name: yup.string('Nome invalido!')
   .matches(reg, 'Apenas letras são permitidas').required('Campo Obrigatório!'),
-  password: yup.string('Senha inválida!').required('Campo Obrigatório!')
+  password: yup.string('Senha inválida!').min(6, 'Sua senha deve conter mais que 6 caracterees').required('Campo Obrigatório!')
 })
 
 
